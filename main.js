@@ -29,7 +29,7 @@ recognition.onresult = function(event) {
 function speak(){
     var synth = window.speechSynthesis;
 
-    speakData = "Tirando sua selfie em 5 segundos "
+    speakData = "Tirando sua selfie em 5 segundos ";
 
 
     var utterThis = new SpeechSynthesisUltterance(speakData);
@@ -57,7 +57,7 @@ function takeSelfie()
 {
     Webcam.snap(function(data_url) {
         document.getElementById("result").innerHTML = '<img id="selfieImage" src=" '+data_uri+'"/>';
-    })
+    });
 }
 
 
