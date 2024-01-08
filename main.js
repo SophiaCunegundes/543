@@ -29,7 +29,7 @@ var Content = event.result[0][0].transcript;
 function speak(){
     var synth = window.speechSynthesis;
 
-    speakData = "Tirando sua selfie em 5 segundos ";
+    speakData = "Tirando sua selfie em 5 segundos";
 
     var utterThis = new SpeechSynthesisUtterance(speakData);
 
@@ -38,17 +38,18 @@ function speak(){
     Webcam.attach(camera);
 
     setTimeout(function()
-    {
-        takeSelfie();
+    { 
+        takeSelfie(); 
         save();
     }, 5000);
 }
 
+ 
 camera = document.getElementById("camera");
 Webcam.set({
-    width:360, 
-    height:250, 
-    image_format : 'jpeg', 
+    width:360,
+    height:250,
+    image_format : 'jpeg',
     jpeg_quality:90
 });
 
@@ -56,7 +57,7 @@ function takeSelfie()
 {
     Webcam.snap(function(data_uri) {
         document.getElementById("result").innerHTML = '<img id="selfieImage" src="'+data_uri+'"/>';
-    });
+    });
 }
 
 
