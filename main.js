@@ -1,28 +1,28 @@
 var SpeechRecognition = window.webkitSpeechRecognition;
-
+  
 var recognition = new SpeechRecognition();
 
-var Textbox = document.getElementById("textbox");
+var Textbox = document.getElementById("textbox"); 
 
 function start()
 {
-    Textbox.innerHTML = "";
+    Textbox.innerHTML = ""; 
     recognition.start();
-}
-
+} 
+ 
 recognition.onresult = function(event) {
 
-    console.log(event);
+ console.log(event); 
 
-var Content = event.result[0][0].transcript;
+var Content = event.results[0][0].transcript;
 
-    Textbox.innerHTML = Content; 
+    Textbox.innerHTML = Content;
     console.log(Content);
-        if(Content == "tire minha selfie")
-        {
-            console.log("tirando selfie --- ");
-            speak();
-        }
+      if(Content =="tire minha selfie")
+      {
+        console.log("tirando selfie --- ");
+        speak();
+      }
 }
 
 
@@ -57,14 +57,14 @@ function takeSelfie()
 {
     Webcam.snap(function(data_uri) {
         document.getElementById("result").innerHTML = '<img id="selfieImage" src="'+data_uri+'"/>';
-    });
+    });
 }
 
 
 function save()
 {
-    link = document.getElementById("link");
-    image = document.getElementById("selfieImage").src ;
-    link.href = image;
-    link.click();
+  link = document.getElementById("link");
+  image = document.getElementById("selfieImage").src ;
+  link.href = image;
+  link.click();
 }
